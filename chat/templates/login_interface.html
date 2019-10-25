@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/static/css/login_interface_bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/login_interface_index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="tag-toggle">
+      <li class="tag-login active">登陆</li>
+      <li class="tag-register">注册</li>
+    </ul>
+    <!-- 登陆 -->
+    <div class="login-box">
+      <div>
+        <label for="username">账号<input class="form-control" type="text" id="login-username" placeholder="请输入账号"></label><span
+          id="login-username-x" class="text-danger wrong-number">&nbsp;账号有误</span>
+      </div>
+      <div>
+        <label for="password">密码<input class="form-control" type="password" id="login-password" placeholder="请输入密码"></label><span
+          id="login-password-x" class="text-danger wrong-number">&nbsp;密码有误</span>
+      </div>
+      <div class="btn-box">
+        <input class="login btn btn-primary btn-sm" type="button" id="login" value="登陆">
+        <input class="forget btn btn-link btn-sm" type="button" value="忘记密码？" id="login-forget">
+      </div>
+    </div>
+    <!-- 注册 -->
+    <div class="register-box">
+      <div>
+        <label for="register-username">账号<input class="form-control" type="text" id="register-username" placeholder="请输入账号"></label><span
+          id="register-username-x" class="text-danger wrong-number">&nbsp;账号有误</span>
+      </div>
+      <div>
+        <label for="register-password">密码<input class="form-control" type="password" id="register-password" placeholder="请输入密码"></label><span
+          id="register-password-x" class="text-danger wrong-number">&nbsp;密码有误</span>
+      </div>
+      <div>
+          <label for="repeat-password">确认密码<input class="form-control" type="password" id="repeat-password" placeholder="确认密码"></label><span
+            id="repeat-password-x" class="text-danger wrong-number">&nbsp;密码不一致</span>
+        </div>
+      <div class="btn-box">
+        <input class="register btn btn-primary btn-sm" type="button" id="register" value="注册">
+        <!-- <input class="forget btn btn-link btn-sm" type="button" value="忘记密码？" id="register-forget"> -->
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="/static/js/login_interface_jquery.min.js"></script>
+<script>
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}' }
+    })
+</script>
+<script src="/static/js/login_interface_index.js"></script>
+
+</html>

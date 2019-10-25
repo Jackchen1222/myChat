@@ -1,0 +1,24 @@
+.wrong-number,.register-box{
+  display: none;
+}
+ul,li{
+  list-style: none;
+}
+ul{
+  width: 100%;
+  overflow: hidden;
+}
+li{
+  float: left;
+}
+.tag-toggle li{
+  width: 100px;
+  text-align: center;
+  border-bottom: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 30px;
+}
+.tag-toggle li.active{
+  color: #007bff;
+}
