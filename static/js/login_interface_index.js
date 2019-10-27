@@ -3,7 +3,11 @@ $(function () {
 
   $('#login').click(login);
   $('#register').click(register);
-
+  $(document).keydown(function (e) {
+    if (e.keyCode === 13 && ($('.login-box').css('display') != 'none')) {
+      login();
+    }
+  })
   // 注册登录页切换
   $(".tag-login").click(function () {
     if (!$(this).hasClass('active')) {
@@ -44,7 +48,9 @@ $(function () {
         data: { username: $('#login-username').val(), password: $('#login-password').val(), logintype: '0' },
         dataType: "json",
         success: function (response) {
-          console.log('登录成功', response)
+          if (response.result === 'success') {
+            window.location.href = 'jump.html';
+          }
         }
       });
     }
@@ -80,7 +86,9 @@ $(function () {
         data: { username: $('#register-username').val(), password: $('#register-password').val(), logintype: '1' },
         dataType: "json",
         success: function (response) {
-          console.log('注册成功', response)
+          if (response.result === 'success') {
+            window.location.href = 'jump.html';
+          }
         }
       });
     }

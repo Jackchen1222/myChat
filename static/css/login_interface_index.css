@@ -22,3 +22,17 @@ li{
 .tag-toggle li.active{
   color: #007bff;
 }
+.login-box label,.login-box input,.register-box label,.register-box input{
+  width: 100%;
+}
+#login-username-x,#login-password-x,#register-username-x,#register-password-x,#repeat-password-x{
+  text-align: right;
+  padding-right: 2em;
+  padding-bottom: 10px;
+}
+.tag-toggle{
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+  font-family: '微软雅黑';
+}

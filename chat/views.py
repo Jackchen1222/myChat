@@ -12,6 +12,9 @@ from .chatInterface.UserLogin import *
 def homeIndex(request):
     return render(request, 'login_interface.html')
 
+def tempIndex(request):
+    return render(request, 'jump.html')
+
 def loginIndex(request):
     LoginIndexResultName = 'result'
     LoginIndexReasonName = 'reason'

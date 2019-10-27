@@ -21,11 +21,13 @@ import os
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic.base import RedirectView
 
-urlpatterns = {
+urlpatterns = [
     path('', views.homeIndex),
+    url(r'^jump', views.tempIndex, name='temphtml'),
     url(r'^userlogin', views.loginIndex, name='userlogin'),
     path('admin/', admin.site.urls),
-}
+]
 
 urlpatterns += staticfiles_urlpatterns()
